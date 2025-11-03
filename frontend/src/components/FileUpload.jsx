@@ -84,7 +84,7 @@ const FileUpload = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-amber-200 via-yellow-100 to-orange-100 p-6">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-linear-to-br from-amber-200 via-yellow-200 to-orange-300 p-6">
       <Motion.h1
         className="text-4xl font-extrabold text-gray-800 mb-10 text-center"
         initial={{ opacity: 0, y: -20 }}
