@@ -1,11 +1,25 @@
 const express = require("express");
 const {upload} = require("./config/upload.js");
 const path = require("path");
+const cors = require("cors");
 const multer = require("multer");
 
 const app = express();
 const PORT = 3000;
 
+app.use((req, res, next) => {
+  console.log("Request received:", req.method, req.url);
+  next();
+});
+
+
+// Enable CORS for frontend (http://localhost:5173)
+app.use(cors({
+  origin: "http://localhost:5173",  // allow only your React app
+  methods: ["GET", "POST"],
+}));
+
+// For Serving Static Files in Public
 const folderLocation = path.join(__dirname, "uploads");
 app.use("/uploads", express.static(folderLocation));
 
